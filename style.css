@@ -1,0 +1,14 @@
+.container {
+    border: 1px solid black;
+}
+
+.card {
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: auto;
+}
