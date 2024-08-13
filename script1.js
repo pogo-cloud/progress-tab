@@ -15,7 +15,8 @@ addButton.addEventListener("click", (event) => {
     card.setAttribute("draggable", true);
     card.setAttribute("id", `card-${count++}`);
     card.style.cssText = `padding:5px;`
-        // console.log(card.id);
+
+    // console.log(card.id);
     card.innerHTML = `Default Task`;
     todoCont.append(card);
     card.addEventListener("click", (event) => {
@@ -36,11 +37,13 @@ addButton.addEventListener("click", (event) => {
         let targetId = event.target.id;
         event.dataTransfer.setData("text", targetId);
         card.style.opacity = 0.2;
+
         console.log("card-dragstart");
     })
     card.addEventListener("dragend", (event) => {
         //event.preventDefault();
         card.style.opacity = 1;
+
         console.log("card-end");
     })
     let arr = ["dragover", "dragenter", "drop"];
@@ -48,6 +51,9 @@ addButton.addEventListener("click", (event) => {
     for (let t of alltasks) {
         arr.forEach((value) => {
             t.addEventListener(value, (event) => {
+                // if (t.innerText === "TODO") {
+                //     t.style.backgroundColor = "red";
+                // }
                 event.preventDefault();
                 if (value === "dragover") {
                     event.preventDefault();
@@ -57,8 +63,16 @@ addButton.addEventListener("click", (event) => {
                     let dropId = event.dataTransfer.getData("text");
                     let dropElement = document.getElementById(dropId);
                     t.append(dropElement);
+                    if (t.id === "todo") {
+                        dropElement.style.backgroundColor = "#FAE8E0";
+                    } else if (t.id === "inprogress") {
+                        dropElement.style.backgroundColor = "#FFBF00";
+                    } else if (t.id === "done") {
+                        dropElement.style.backgroundColor = "#73BBA3";
+                    }
 
                 }
+
             })
 
         })

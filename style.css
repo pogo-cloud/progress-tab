@@ -1,14 +1,45 @@
 .container {
     border: 1px solid black;
+    padding: 10px;
 }
 
 .card {
-    border: 1px solid black;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5px;
+}
+
+.column {
+    border: none;
+    width: 200px;
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
+    border-radius: 5px;
     margin: auto;
+    width: 600px;
+    background-color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+span {
+    color: #5B99C2;
+}
+
+#submit {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #F9DBBA;
+    outline: none;
+    border: none;
+}
+
+h1 {
+    text-align: center;
 }
